@@ -5,6 +5,7 @@ namespace RecceptHanteringGrupp
         public Form1()
         {
             InitializeComponent();
+            //en första kommentar
         }
     }
 }
