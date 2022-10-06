@@ -36,6 +36,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblLinkNewUser = new System.Windows.Forms.LinkLabel();
+            this.lblLoginFailed = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -109,11 +110,22 @@
             this.lblLinkNewUser.TabStop = true;
             this.lblLinkNewUser.Text = "här";
             // 
+            // lblLoginFailed
+            // 
+            this.lblLoginFailed.AutoSize = true;
+            this.lblLoginFailed.ForeColor = System.Drawing.Color.Red;
+            this.lblLoginFailed.Location = new System.Drawing.Point(53, 183);
+            this.lblLoginFailed.Name = "lblLoginFailed";
+            this.lblLoginFailed.Size = new System.Drawing.Size(38, 15);
+            this.lblLoginFailed.TabIndex = 10;
+            this.lblLoginFailed.Text = "label1";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 327);
+            this.Controls.Add(this.lblLoginFailed);
             this.Controls.Add(this.lblLinkNewUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblPassword);
@@ -139,5 +151,6 @@
         private TextBox txtPassword;
         private Label label3;
         private LinkLabel lblLinkNewUser;
+        private Label lblLoginFailed;
     }
 }

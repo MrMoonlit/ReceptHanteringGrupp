@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using RecceptHanteringGrupp.Classes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace RecceptHanteringGrupp
 {
     public partial class LoginForm : Form
     {
-        string filepath = @".\loginCredentials.txt";
+        FileHandler FileHandler = new FileHandler();
+
         public LoginForm()
         {
             InitializeComponent();
+            lblLoginFailed.Text = "";
         }
 
        
@@ -26,18 +21,16 @@ namespace RecceptHanteringGrupp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string UserAccount = txtUsername + "," + txtPassword;
-            string row = "";
-
-            using (StreamReader reader = new StreamReader(filepath))
+            if (FileHandler.CheckLoginCredentials(txtUsername.Text, txtPassword.Text))
             {
-                if ((row = reader.ReadLine()) != null )
-                {
-
-                }
+                //här händer det det som händer om användaren är godkänd
+            }
+            else
+            {
+                lblLoginFailed.Text = "Användarnamn eller lösenord är felaktigt";
             }
         }
 
-
+        
     }
 }
