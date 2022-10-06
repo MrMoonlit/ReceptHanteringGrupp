@@ -12,14 +12,32 @@ namespace RecceptHanteringGrupp
 {
     public partial class LoginForm : Form
     {
+        string filepath = @".\loginCredentials.txt";
         public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+       
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string UserAccount = txtUsername + "," + txtPassword;
+            string row = "";
+
+            using (StreamReader reader = new StreamReader(filepath))
+            {
+                if ((row = reader.ReadLine()) != null )
+                {
+
+                }
+            }
+        }
+
+
     }
 }

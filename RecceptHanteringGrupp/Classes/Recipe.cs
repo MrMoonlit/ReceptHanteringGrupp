@@ -15,14 +15,14 @@
             Picture = picture;
         }
 
-        public List<Recipe> Search(string condition, string category)
-        {
-            //List<Recipe> recipes = FileHandler.GetAllRecipes();
+        //public List<Recipe> Search(string condition, string category)
+        //{
+        //    //List<Recipe> recipes = FileHandler.GetAllRecipes();
 
-            //var result = recipes.Where(recipe => recipe.Name.Contains(condition) && recipe.Type == category).ToList();
+        //    //var result = recipes.Where(recipe => recipe.Name.Contains(condition) && recipe.Type == category).ToList();
 
-            //return result;
-        }
+        //    //return result;
+        //}
 
         public void SaveChanges()
         {
