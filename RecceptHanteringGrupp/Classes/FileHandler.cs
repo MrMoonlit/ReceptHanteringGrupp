@@ -43,9 +43,9 @@ namespace RecceptHanteringGrupp.Classes
 
         public static void WriteToFile(Recipe recipe)
         {
-            XmlSerializer serializer;
+            
             //serializer = new XmlSerializer(typeof(Recipe));
-            serializer = new XmlSerializer(typeof(Recipe));
+            XmlSerializer serializer = new XmlSerializer(typeof(Recipe));
             string filePath = @"C:\temp\file.Xml";
             StreamWriter writer = new StreamWriter(filePath);
             serializer.Serialize(writer, recipe);
