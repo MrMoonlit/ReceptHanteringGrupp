@@ -2,6 +2,10 @@
 {
     public class Recipe
     {
+
+        public static List<Recipe> recipeList = new List<Recipe>();
+
+
         public string Name { get; set; }
         public string Description { get; set; }
         public string Type { get; set; } //Kött, Fisk, Sallader, Soppor, Desserter/kakor
@@ -15,13 +19,15 @@
             Picture = picture;
         }
 
-        public List<Recipe> Search(string condition, string category)
+        public static List<Recipe> Search(string condition, string category)
         {
-            List<Recipe> recipes = new List<Recipe>(); //placeholder för att metoden ska fungera så vi kan testköra
-            //List<Recipe> recipes = FileHandler.GetAllRecipes();
+            var recipes = new List<Recipe>();
 
-            //var result = recipes.Where(recipe => recipe.Name.Contains(condition) && recipe.Type == category).ToList();
-
+            //Lade denna tillfälligt till en lokal lista. Ska ändras till den lista som läses in från XML-filen
+            if (category == "Alla kategorier")
+                recipes = recipeList.Where(recipe => recipe.Name.Contains(condition)).ToList();
+            else
+                recipes = recipeList.Where(recipe => recipe.Name.Contains(condition) && recipe.Type == category).ToList();
             return recipes;
         }
 
@@ -30,15 +36,13 @@
 
         }
 
-        public void SaveNew(string name, string description, string type, Image picture)
+        public static void SaveNew(string name, string description, string type, Image picture)
         {
             Recipe recipe = new Recipe(name, description, type, picture);
-            //FileHandler.WriteToFile();
-        }
 
-        private void Delete()
-        {
+            //Sparas tillfälligt till lokal lista, ska sparas till XML-fil genom Filehandler-Klassen
 
+            recipeList.Add(recipe);
         }
 
     }

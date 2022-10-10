@@ -15,7 +15,7 @@ namespace RecceptHanteringGrupp
     public partial class ChangeForm : Form
     {
         SearchForm searchForm = new SearchForm();
-
+        Image recipeImage;
         public ChangeForm()
         {
             InitializeComponent();
@@ -31,22 +31,25 @@ namespace RecceptHanteringGrupp
             {
                 picImage.BackgroundImage = new Bitmap(open.FileName);
 
-                // image file path  
-                //textBox1.Text = open.FileName;
+                recipeImage = new Bitmap(open.FileName);
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Recipe recipe = new Recipe(txtName.Text, txtDescription.Text, txtType.Text, picImage.Image);
-            FileHandler.WriteToFile(recipe);
-
+            string test = "";           
+            Recipe.SaveNew(txtName.Text, txtDescription.Text, txtType.Text, recipeImage);
             VisualControl.SwitchForm(searchForm, this);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             VisualControl.SwitchForm(searchForm, this);
+        }
+
+        private void txtType_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
