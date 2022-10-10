@@ -47,10 +47,11 @@ namespace RecceptHanteringGrupp.Classes
         {
             XmlSerializer serializer;
             //serializer = new XmlSerializer(typeof(Recipe));
-            
+            serializer = new XmlSerializer(typeof(Recipe));
             
 
             FileStream filestream = new FileStream(@"C:\temp\file.Xml", FileMode.Create, FileAccess.Write);
+
             
             filestream.Close();
            
