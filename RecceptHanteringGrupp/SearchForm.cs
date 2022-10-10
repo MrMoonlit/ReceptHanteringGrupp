@@ -13,8 +13,12 @@ namespace RecceptHanteringGrupp
             //en första kommentar
             //Emily första projekt
             //Bara Test
-            //recipes = new List<Recipe>();
-            //serializer = new XmlSerializer(typeof(List<Recipe>));
+            recipes = new List<Recipe>();
+            serializer = new XmlSerializer(typeof(List<Recipe>));
+
+
+
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
