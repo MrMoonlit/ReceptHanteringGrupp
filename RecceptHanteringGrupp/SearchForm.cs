@@ -4,16 +4,14 @@ namespace RecceptHanteringGrupp
 {
     public partial class SearchForm : Form
     {
-        XmlSerializer serializer;
-        List<Recipe> recipes;
+ 
         public SearchForm()
         {
             InitializeComponent();
             //en första kommentar
             //Emily första projekt
             //Bara Test
-            recipes = new List<Recipe>();
-            serializer = new XmlSerializer(typeof(List<Recipe>));
+     
 
 
 
