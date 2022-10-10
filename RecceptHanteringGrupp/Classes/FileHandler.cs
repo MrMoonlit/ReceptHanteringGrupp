@@ -2,7 +2,13 @@
 {
     public class FileHandler
     {
-        string _filepath = @".\loginCredentials.txt";
+        //string _filepath = @".\loginCredentials.txt";
+
+
+        //Skapar tillfällig filepath för att testa funktionalitet
+        string _filepath = @"C:\Users\Joael\Desktop\TestInlogg.txt";
+
+
         StreamReader reader = null;
 
         public bool CheckLoginCredentials(string username, string password)
@@ -28,7 +34,9 @@
             catch (Exception ex)
             {
                 throw ex;
+                MessageBox.Show(ex.Message);
             }
+            
             
             return false;
         }

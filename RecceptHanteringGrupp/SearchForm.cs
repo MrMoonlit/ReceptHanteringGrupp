@@ -5,19 +5,11 @@ namespace RecceptHanteringGrupp
     public partial class SearchForm : Form
     {
         static ChangeForm changeForm = new ChangeForm();
-        //XmlSerializer serializer;
-        //List<Recipe> recipes;
+
         public SearchForm()
         {
             InitializeComponent();
-            //en första kommentar
-            //Emily första projekt
-            //Bara Test
-            recipes = new List<Recipe>();
-            serializer = new XmlSerializer(typeof(List<Recipe>));
-
-
-
+            CheckIfAdmin();
 
         }
 
@@ -36,6 +28,19 @@ namespace RecceptHanteringGrupp
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             VisualControl.SwitchForm(changeForm, this);
+        }
+
+        private void CheckIfAdmin()
+        {
+            if (LoginForm.loggedIn)
+                btnAddNew.Visible = true;
+            else
+                btnAddNew.Visible = false;
+        }
+
+        private void FormFocusActive(object sender, EventArgs e)
+        {
+            CheckIfAdmin();
         }
     }
 }
