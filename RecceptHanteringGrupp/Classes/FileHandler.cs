@@ -46,12 +46,11 @@ namespace RecceptHanteringGrupp.Classes
         public static void WriteToFile(Recipe recipe)
         {
             XmlSerializer serializer;
-            List<Recipe> recipes;
-            recipes = new List<Recipe>();
-            serializer = new XmlSerializer(typeof(List <Recipe>));
-
+            //serializer = new XmlSerializer(typeof(Recipe));
             
-            FileStream filestream = new FileStream("", FileMode.Create, FileAccess.Write);
+            
+
+            FileStream filestream = new FileStream(@"C:\temp\file.Xml", FileMode.Create, FileAccess.Write);
             
             filestream.Close();
            
