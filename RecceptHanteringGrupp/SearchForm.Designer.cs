@@ -35,6 +35,7 @@
             this.picRecipe = new System.Windows.Forms.PictureBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAddNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,22 @@
             this.label1.Text = "Admin login";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Location = new System.Drawing.Point(34, 405);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(120, 23);
+            this.btnAddNew.TabIndex = 7;
+            this.btnAddNew.Text = "Lägg till nytt recept";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 440);
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.picRecipe);
@@ -130,5 +142,6 @@
         private PictureBox picRecipe;
         private Label lblHeader;
         private Label label1;
+        private Button btnAddNew;
     }
 }

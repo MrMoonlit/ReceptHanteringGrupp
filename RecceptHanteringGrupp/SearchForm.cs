@@ -21,5 +21,14 @@ namespace RecceptHanteringGrupp
             login.StartPosition = FormStartPosition.CenterParent;
             login.ShowDialog();
         }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            ChangeForm addForm = new ChangeForm();
+            addForm.StartPosition = FormStartPosition.Manual;
+            addForm.Location = this.Location;
+            addForm.Show();
+            this.Hide();
+        }
     }
 }
