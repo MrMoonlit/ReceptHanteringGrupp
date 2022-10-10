@@ -28,106 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblRecipe = new System.Windows.Forms.Label();
-            this.txtRecipe = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.txtType = new System.Windows.Forms.TextBox();
             this.lblType = new System.Windows.Forms.Label();
-            this.btbChange = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.btnNewImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblRecipe
-            // 
-            this.lblRecipe.AutoSize = true;
-            this.lblRecipe.Location = new System.Drawing.Point(23, 36);
-            this.lblRecipe.Name = "lblRecipe";
-            this.lblRecipe.Size = new System.Drawing.Size(65, 25);
-            this.lblRecipe.TabIndex = 0;
-            this.lblRecipe.Text = "Recept";
-            // 
-            // txtRecipe
-            // 
-            this.txtRecipe.Location = new System.Drawing.Point(140, 36);
-            this.txtRecipe.Name = "txtRecipe";
-            this.txtRecipe.Size = new System.Drawing.Size(205, 31);
-            this.txtRecipe.TabIndex = 1;
-            // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(140, 95);
+            this.txtName.Location = new System.Drawing.Point(93, 29);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(205, 31);
+            this.txtName.Size = new System.Drawing.Size(145, 23);
             this.txtName.TabIndex = 3;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(23, 98);
+            this.lblName.Location = new System.Drawing.Point(11, 31);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(70, 25);
+            this.lblName.Size = new System.Drawing.Size(46, 15);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Maträtt";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(140, 161);
+            this.txtDescription.Location = new System.Drawing.Point(93, 69);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(205, 31);
+            this.txtDescription.Size = new System.Drawing.Size(145, 137);
             this.txtDescription.TabIndex = 5;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(23, 164);
+            this.lblDescription.Location = new System.Drawing.Point(11, 70);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(102, 25);
+            this.lblDescription.Size = new System.Drawing.Size(68, 15);
             this.lblDescription.TabIndex = 4;
             this.lblDescription.Text = "Beskrivning";
             // 
             // txtType
             // 
-            this.txtType.Location = new System.Drawing.Point(140, 225);
+            this.txtType.Location = new System.Drawing.Point(93, 223);
+            this.txtType.Margin = new System.Windows.Forms.Padding(2);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(205, 31);
+            this.txtType.Size = new System.Drawing.Size(145, 23);
             this.txtType.TabIndex = 7;
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(-1, 228);
+            this.lblType.Location = new System.Drawing.Point(7, 226);
+            this.lblType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(126, 25);
+            this.lblType.Size = new System.Drawing.Size(82, 15);
             this.lblType.TabIndex = 6;
             this.lblType.Text = "Typ av maträtt";
             // 
-            // btbChange
+            // btnSave
             // 
-            this.btbChange.Location = new System.Drawing.Point(201, 308);
-            this.btbChange.Name = "btbChange";
-            this.btbChange.Size = new System.Drawing.Size(144, 43);
-            this.btbChange.TabIndex = 9;
-            this.btbChange.Text = "Ändra";
-            this.btbChange.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(136, 273);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(101, 26);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Spara";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // picImage
             // 
-            this.picImage.Location = new System.Drawing.Point(453, 51);
+            this.picImage.Location = new System.Drawing.Point(317, 31);
+            this.picImage.Margin = new System.Windows.Forms.Padding(2);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(301, 217);
+            this.picImage.Size = new System.Drawing.Size(211, 150);
             this.picImage.TabIndex = 10;
             this.picImage.TabStop = false;
             // 
             // btnNewImage
             // 
-            this.btnNewImage.Location = new System.Drawing.Point(539, 308);
+            this.btnNewImage.Location = new System.Drawing.Point(377, 185);
+            this.btnNewImage.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewImage.Name = "btnNewImage";
-            this.btnNewImage.Size = new System.Drawing.Size(127, 43);
+            this.btnNewImage.Size = new System.Drawing.Size(89, 26);
             this.btnNewImage.TabIndex = 11;
             this.btnNewImage.Text = "Ny bild";
             this.btnNewImage.UseVisualStyleBackColor = true;
@@ -135,20 +128,19 @@
             // 
             // ChangeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(593, 360);
             this.Controls.Add(this.btnNewImage);
             this.Controls.Add(this.picImage);
-            this.Controls.Add(this.btbChange);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtType);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.txtRecipe);
-            this.Controls.Add(this.lblRecipe);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChangeForm";
             this.Text = "ChangeForm";
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
@@ -158,16 +150,13 @@
         }
 
         #endregion
-
-        private Label lblRecipe;
-        private TextBox txtRecipe;
         private TextBox txtName;
         private Label lblName;
         private TextBox txtDescription;
         private Label lblDescription;
         private TextBox txtType;
         private Label lblType;
-        private Button btbChange;
+        private Button btnSave;
         private PictureBox picImage;
         private Button btnNewImage;
     }

@@ -9,7 +9,6 @@
         {
             try
             {
-
                 using (StreamReader reader = new StreamReader(_filepath))
                 {
                     string row = "";
@@ -30,8 +29,14 @@
             {
                 throw ex;
             }
-
+            
             return false;
+        }
+
+
+        public static void WriteToFile(Recipe recipe)
+        {
+
         }
     }
 }
