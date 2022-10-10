@@ -4,20 +4,17 @@ namespace RecceptHanteringGrupp
 {
     public partial class SearchForm : Form
     {
-        XmlSerializer serializer;
-        List<Recipe> recipes;
+        static ChangeForm changeForm = new ChangeForm();
+        //XmlSerializer serializer;
+        //List<Recipe> recipes;
         public SearchForm()
         {
             InitializeComponent();
             //en första kommentar
             //Emily första projekt
             //Bara Test
-            recipes = new List<Recipe>();
-            serializer = new XmlSerializer(typeof(List<Recipe>));
-
-
-
-
+            //recipes = new List<Recipe>();
+            //serializer = new XmlSerializer(typeof(List<Recipe>));
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -34,11 +31,7 @@ namespace RecceptHanteringGrupp
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            ChangeForm addForm = new ChangeForm();
-            addForm.StartPosition = FormStartPosition.Manual;
-            addForm.Location = this.Location;
-            addForm.Show();
-            this.Hide();
+            VisualControl.SwitchForm(changeForm, this);
         }
     }
 }
