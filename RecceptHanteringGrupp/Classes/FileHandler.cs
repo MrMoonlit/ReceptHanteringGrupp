@@ -48,12 +48,13 @@ namespace RecceptHanteringGrupp.Classes
             XmlSerializer serializer;
             //serializer = new XmlSerializer(typeof(Recipe));
             serializer = new XmlSerializer(typeof(Recipe));
-            
+            string filePath = @"C:\temp\file.Xml";
+            StreamWriter writer = new StreamWriter(filePath);
+            serializer.Serialize(writer, recipe);
+            //FileStream filestream = new FileStream(@"C:\temp\file.Xml", FileMode.Create, FileAccess.Write);
 
-            FileStream filestream = new FileStream(@"C:\temp\file.Xml", FileMode.Create, FileAccess.Write);
-
             
-            filestream.Close();
+            writer.Close();
            
 
 
