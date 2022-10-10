@@ -52,7 +52,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "button1";
+            this.btnSearch.Text = "Sök";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -67,15 +67,15 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(348, 139);
+            this.txtDescription.Location = new System.Drawing.Point(348, 177);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(354, 255);
+            this.txtDescription.Size = new System.Drawing.Size(354, 217);
             this.txtDescription.TabIndex = 3;
             // 
             // picRecipe
             // 
-            this.picRecipe.Location = new System.Drawing.Point(348, 37);
+            this.picRecipe.Location = new System.Drawing.Point(348, 75);
             this.picRecipe.Name = "picRecipe";
             this.picRecipe.Size = new System.Drawing.Size(132, 96);
             this.picRecipe.TabIndex = 4;
@@ -84,9 +84,10 @@
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
-            this.lblHeader.Location = new System.Drawing.Point(486, 37);
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblHeader.Location = new System.Drawing.Point(348, 37);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(38, 15);
+            this.lblHeader.Size = new System.Drawing.Size(83, 32);
             this.lblHeader.TabIndex = 5;
             this.lblHeader.Text = "label1";
             // 
@@ -110,6 +111,7 @@
             this.btnAddNew.TabIndex = 7;
             this.btnAddNew.Text = "Lägg till nytt recept";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Visible = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // SearchForm
@@ -126,7 +128,8 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchCondition);
             this.Name = "SearchForm";
-            this.Text = "Form1";
+            this.Text = "Sök recept";
+            this.Activated += new System.EventHandler(this.FormFocusActive);
             ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

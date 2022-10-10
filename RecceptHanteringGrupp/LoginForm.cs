@@ -6,6 +6,8 @@ namespace RecceptHanteringGrupp
     public partial class LoginForm : Form
     {
         FileHandler FileHandler = new FileHandler();
+        public static bool loggedIn = false;
+        
 
         public LoginForm()
         {
@@ -24,6 +26,8 @@ namespace RecceptHanteringGrupp
             if (FileHandler.CheckLoginCredentials(txtUsername.Text, txtPassword.Text))
             {
                 //här händer det det som händer om användaren är godkänd
+                loggedIn = true;
+                this.Close();
             }
             else
             {
