@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.lblType = new System.Windows.Forms.Label();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,22 +62,25 @@
             // 
             this.lstSearchResult.FormattingEnabled = true;
             this.lstSearchResult.ItemHeight = 15;
-            this.lstSearchResult.Location = new System.Drawing.Point(34, 75);
+            this.lstSearchResult.Location = new System.Drawing.Point(34, 105);
             this.lstSearchResult.Name = "lstSearchResult";
-            this.lstSearchResult.Size = new System.Drawing.Size(288, 424);
+            this.lstSearchResult.Size = new System.Drawing.Size(288, 394);
             this.lstSearchResult.TabIndex = 2;
             this.lstSearchResult.SelectedValueChanged += new System.EventHandler(this.lstSearchResult_SelectedValueChanged);
             // 
             // txtDescription
             // 
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescription.Location = new System.Drawing.Point(348, 232);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
             this.txtDescription.Size = new System.Drawing.Size(354, 269);
             this.txtDescription.TabIndex = 3;
             // 
             // picRecipe
             // 
+            this.picRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picRecipe.Location = new System.Drawing.Point(348, 96);
             this.picRecipe.Name = "picRecipe";
             this.picRecipe.Size = new System.Drawing.Size(195, 130);
@@ -87,7 +91,7 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblHeader.Location = new System.Drawing.Point(348, 37);
+            this.lblHeader.Location = new System.Drawing.Point(342, 37);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(0, 32);
             this.lblHeader.TabIndex = 5;
@@ -95,6 +99,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(620, 513);
@@ -124,11 +129,28 @@
             this.lblType.Size = new System.Drawing.Size(0, 15);
             this.lblType.TabIndex = 8;
             // 
+            // cboCategory
+            // 
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Items.AddRange(new object[] {
+            "Alla kategorier",
+            "Kött",
+            "Fisk",
+            "Sallader",
+            "Soppor",
+            "Desserter/kakor"});
+            this.cboCategory.Location = new System.Drawing.Point(34, 66);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(121, 23);
+            this.cboCategory.TabIndex = 9;
+            this.cboCategory.Text = "Alla kategorier";
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 550);
+            this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.label1);
@@ -158,5 +180,6 @@
         private Label label1;
         private Button btnAddNew;
         private Label lblType;
+        private ComboBox cboCategory;
     }
 }

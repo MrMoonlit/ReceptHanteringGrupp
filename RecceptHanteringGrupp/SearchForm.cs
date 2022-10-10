@@ -11,10 +11,23 @@ namespace RecceptHanteringGrupp
             InitializeComponent();
             CheckIfAdmin();
 
+            #region Skapar upp recept tillfälligt för att testa funktionalitet
+            Recipe recipe1 = new Recipe("Fläskfile", "Laga maten så blir det gott att äta sen", "Kött", Properties.Resources.flaskfilégryta_med_champinjoner);
+            Recipe recipe2 = new Recipe("Fiskbullar i vitvinssås", "Laga maten och är den", "Fisk", Properties.Resources.flaskfilégryta_med_champinjoner);
+            Recipe.recipeList.Add(recipe1);
+            Recipe.recipeList.Add(recipe2);
+            #endregion
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            lstSearchResult.Items.Clear();
+            var recipeList = Recipe.Search(txtSearchCondition.Text, cboCategory.Text);
+            foreach (var recipe in recipeList)
+            {
+                lstSearchResult.Items.Add(recipe.Name);
+            }
 
         }
 
@@ -46,12 +59,17 @@ namespace RecceptHanteringGrupp
         private void lstSearchResult_SelectedValueChanged(object sender, EventArgs e)
         {
             //Skickar ut info om valt recept i relevant control
-            Recipe result = FileHandler.recipes.Where(recipe => recipe.Name == lstSearchResult.SelectedItem.ToString()).SingleOrDefault();
 
-            lblHeader.Text = result.Name;
-            lblType.Text = result.Type;
-            txtDescription.Text = result.Description;
-            picRecipe.BackgroundImage = result.Picture;
+            if (lstSearchResult.SelectedItem != null)
+            {
+                Recipe result = Recipe.recipeList.Where(recipe => recipe.Name == lstSearchResult.SelectedItem.ToString()).SingleOrDefault();
+
+                lblHeader.Text = result.Name;
+                lblType.Text = result.Type;
+                txtDescription.Text = result.Description;
+                picRecipe.BackgroundImage = result.Picture;
+            }
+
 
         }
     }

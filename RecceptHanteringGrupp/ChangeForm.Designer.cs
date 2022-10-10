@@ -85,6 +85,7 @@
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(145, 23);
             this.txtType.TabIndex = 7;
+            this.txtType.TextChanged += new System.EventHandler(this.txtType_TextChanged);
             // 
             // lblType
             // 
