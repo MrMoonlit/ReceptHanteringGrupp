@@ -1,4 +1,5 @@
-﻿namespace RecceptHanteringGrupp.Classes
+﻿using System.Xml.Serialization;
+namespace RecceptHanteringGrupp.Classes
 {
     public class FileHandler
     {
@@ -36,7 +37,19 @@
 
         public static void WriteToFile(Recipe recipe)
         {
+            XmlSerializer serializer;
+            List<Recipe> recipes;
+
+            recipes = new List<Recipe>();
+            serializer = new XmlSerializer(typeof(List<Recipe>));
+
+            //FileStream filestream = new FileStream("", FileMode.Create, FileAccess.Write);
+            //Recipe r = new Recipe();
+            //r.Name = 
 
         }
+       
+
+      
     }
 }
