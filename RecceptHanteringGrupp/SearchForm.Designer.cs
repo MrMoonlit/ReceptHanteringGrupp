@@ -36,6 +36,7 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
+            this.lblType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,22 +63,23 @@
             this.lstSearchResult.ItemHeight = 15;
             this.lstSearchResult.Location = new System.Drawing.Point(34, 75);
             this.lstSearchResult.Name = "lstSearchResult";
-            this.lstSearchResult.Size = new System.Drawing.Size(288, 319);
+            this.lstSearchResult.Size = new System.Drawing.Size(288, 424);
             this.lstSearchResult.TabIndex = 2;
+            this.lstSearchResult.SelectedValueChanged += new System.EventHandler(this.lstSearchResult_SelectedValueChanged);
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(348, 177);
+            this.txtDescription.Location = new System.Drawing.Point(348, 232);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(354, 217);
+            this.txtDescription.Size = new System.Drawing.Size(354, 269);
             this.txtDescription.TabIndex = 3;
             // 
             // picRecipe
             // 
-            this.picRecipe.Location = new System.Drawing.Point(348, 75);
+            this.picRecipe.Location = new System.Drawing.Point(348, 96);
             this.picRecipe.Name = "picRecipe";
-            this.picRecipe.Size = new System.Drawing.Size(132, 96);
+            this.picRecipe.Size = new System.Drawing.Size(195, 130);
             this.picRecipe.TabIndex = 4;
             this.picRecipe.TabStop = false;
             // 
@@ -87,16 +89,15 @@
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblHeader.Location = new System.Drawing.Point(348, 37);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(83, 32);
+            this.lblHeader.Size = new System.Drawing.Size(0, 32);
             this.lblHeader.TabIndex = 5;
-            this.lblHeader.Text = "label1";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(620, 414);
+            this.label1.Location = new System.Drawing.Point(620, 513);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 17);
             this.label1.TabIndex = 6;
@@ -105,7 +106,7 @@
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(34, 405);
+            this.btnAddNew.Location = new System.Drawing.Point(34, 513);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(120, 23);
             this.btnAddNew.TabIndex = 7;
@@ -114,11 +115,21 @@
             this.btnAddNew.Visible = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblType.Location = new System.Drawing.Point(348, 75);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(0, 15);
+            this.lblType.TabIndex = 8;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 440);
+            this.ClientSize = new System.Drawing.Size(737, 550);
+            this.Controls.Add(this.lblType);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblHeader);
@@ -146,5 +157,6 @@
         private Label lblHeader;
         private Label label1;
         private Button btnAddNew;
+        private Label lblType;
     }
 }

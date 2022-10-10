@@ -42,5 +42,17 @@ namespace RecceptHanteringGrupp
         {
             CheckIfAdmin();
         }
+
+        private void lstSearchResult_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //Skickar ut info om valt recept i relevant control
+            Recipe result = FileHandler.recipes.Where(recipe => recipe.Name == lstSearchResult.SelectedItem.ToString()).SingleOrDefault();
+
+            lblHeader.Text = result.Name;
+            lblType.Text = result.Type;
+            txtDescription.Text = result.Description;
+            picRecipe.BackgroundImage = result.Picture;
+
+        }
     }
 }
