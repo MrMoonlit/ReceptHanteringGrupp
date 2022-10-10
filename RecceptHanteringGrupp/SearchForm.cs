@@ -4,7 +4,9 @@ namespace RecceptHanteringGrupp
 {
     public partial class SearchForm : Form
     {
- 
+        static ChangeForm changeForm = new ChangeForm();
+        //XmlSerializer serializer;
+        //List<Recipe> recipes;
         public SearchForm()
         {
             InitializeComponent();
@@ -31,11 +33,7 @@ namespace RecceptHanteringGrupp
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            ChangeForm addForm = new ChangeForm();
-            addForm.StartPosition = FormStartPosition.Manual;
-            addForm.Location = this.Location;
-            addForm.Show();
-            this.Hide();
+            VisualControl.SwitchForm(changeForm, this);
         }
     }
 }
