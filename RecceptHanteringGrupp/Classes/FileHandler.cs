@@ -8,7 +8,6 @@ namespace RecceptHanteringGrupp.Classes
 
         //Skapar tillfällig filepath för att testa funktionalitet
         string _filepath = @"C:\Users\Joael\Desktop\TestInlogg.txt";
-        public static List<Recipe> recipes = new List<Recipe>();
 
         StreamReader reader = null;
 
@@ -35,7 +34,6 @@ namespace RecceptHanteringGrupp.Classes
             catch (Exception ex)
             {
                 throw ex;
-                MessageBox.Show(ex.Message);
             }
             
             

@@ -47,7 +47,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(145, 23);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 1;
             // 
             // lblName
             // 
@@ -66,7 +66,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(252, 274);
-            this.txtDescription.TabIndex = 5;
+            this.txtDescription.TabIndex = 3;
             // 
             // lblDescription
             // 
@@ -84,7 +84,7 @@
             this.txtType.Margin = new System.Windows.Forms.Padding(2);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(145, 23);
-            this.txtType.TabIndex = 7;
+            this.txtType.TabIndex = 2;
             this.txtType.TextChanged += new System.EventHandler(this.txtType_TextChanged);
             // 
             // lblType

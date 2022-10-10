@@ -64,6 +64,7 @@ namespace RecceptHanteringGrupp
             {
                 Recipe result = Recipe.recipeList.Where(recipe => recipe.Name == lstSearchResult.SelectedItem.ToString()).SingleOrDefault();
 
+
                 lblHeader.Text = result.Name;
                 lblType.Text = result.Type;
                 txtDescription.Text = result.Description;
