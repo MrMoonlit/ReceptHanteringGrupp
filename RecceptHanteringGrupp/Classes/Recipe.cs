@@ -45,9 +45,9 @@
             var recipes = new List<Recipe>();
 
             if (category == "Alla kategorier")
-                recipes = recipeList.Where(recipe => recipe.Name.Contains(condition)).ToList();
+                recipes = recipeList.Where(recipe => recipe.Name.ToLower().Contains(condition.ToLower())).ToList();
             else
-                recipes = recipeList.Where(recipe => recipe.Name.Contains(condition) && recipe.Type == category).ToList();
+                recipes = recipeList.Where(recipe => recipe.Name.ToLower().Contains(condition.ToLower()) && recipe.Type == category).ToList();
             return recipes;
         }
 
