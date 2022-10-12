@@ -8,6 +8,8 @@
         private static string _loginFilepath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Login_Details.txt";
         private static string _recipesFilePath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Recipe_Database.txt";
 
+
+        #region Metoder
         public static bool CheckLoginCredentials(string username, string password)
         {
             try
@@ -50,12 +52,11 @@
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
-
 
         public static List<Recipe> ReadFromFile()
         {
@@ -85,9 +86,11 @@
         }
 
 
+
+        #region Bildkonvertering för att kunna lagra i textfil
         private static string ConvertImageToBase64(Image imageToConvert)
         {
-            using (MemoryStream m = new MemoryStream())
+            try
             {
                 using (MemoryStream ms = new MemoryStream())
                 {
@@ -95,11 +98,17 @@
                     return Convert.ToBase64String(ms.ToArray());
                 }
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public static Image ConvertBase64StringToImage(string image64Bit)
         {
             byte[] imageBytes = Convert.FromBase64String(image64Bit);
             return new Bitmap(new MemoryStream(imageBytes));
         }
+        #endregion
+        #endregion
     }
 }

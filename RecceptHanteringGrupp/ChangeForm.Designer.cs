@@ -136,12 +136,6 @@
             this.cboCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.cboCategory.ForeColor = System.Drawing.Color.Silver;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Items.AddRange(new object[] {
-            "Kött",
-            "Fisk",
-            "Sallader",
-            "Soppor",
-            "Desserter/kakor"});
             this.cboCategory.Location = new System.Drawing.Point(122, 202);
             this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCategory.Name = "cboCategory";

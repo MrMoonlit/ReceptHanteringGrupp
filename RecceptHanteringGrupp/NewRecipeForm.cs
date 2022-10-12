@@ -9,19 +9,24 @@ namespace RecceptHanteringGrupp
         public NewRecipeForm()
         {
             InitializeComponent();
+
+            foreach (string type in Recipe.recipeTypes)
+            {
+                cboCategory.Items.Add(type);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if (!UserInputHandler.MissingInput(this))
             {
                 Recipe.SaveNew(txtName.Text, cboCategory.Text, txtDescription.Text, _recipeImage);
                 MessageBox.Show("Recept sparat!");
                 VisualControl.SwitchForm(searchForm, this);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Något gick fel: " + ex.Message);
+                MessageBox.Show("Något fält saknar inmatning.");
             }
         }
 
@@ -41,6 +46,11 @@ namespace RecceptHanteringGrupp
         private void btnCancel_Click(object sender, EventArgs e)
         {
             VisualControl.SwitchForm(searchForm, this);
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

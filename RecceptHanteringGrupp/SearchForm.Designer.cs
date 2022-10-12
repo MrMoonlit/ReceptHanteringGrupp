@@ -34,11 +34,12 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.picRecipe = new System.Windows.Forms.PictureBox();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAdminLogin = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.lblType = new System.Windows.Forms.Label();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.Black;
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Location = new System.Drawing.Point(353, 62);
@@ -62,7 +64,7 @@
             this.btnSearch.Size = new System.Drawing.Size(107, 38);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Sök";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lstSearchResult
@@ -114,19 +116,19 @@
             this.lblHeader.Size = new System.Drawing.Size(0, 48);
             this.lblHeader.TabIndex = 5;
             // 
-            // label1
+            // lblAdminLogin
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label1.Location = new System.Drawing.Point(886, 855);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 28);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Admin login";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblAdminLogin.AutoSize = true;
+            this.lblAdminLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAdminLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblAdminLogin.ForeColor = System.Drawing.Color.MediumPurple;
+            this.lblAdminLogin.Location = new System.Drawing.Point(886, 855);
+            this.lblAdminLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdminLogin.Name = "lblAdminLogin";
+            this.lblAdminLogin.Size = new System.Drawing.Size(124, 28);
+            this.lblAdminLogin.TabIndex = 6;
+            this.lblAdminLogin.Text = "Admin login";
+            this.lblAdminLogin.Click += new System.EventHandler(this.lblAdminLogin_Click);
             // 
             // btnAddNew
             // 
@@ -158,12 +160,7 @@
             this.cboCategory.ForeColor = System.Drawing.Color.Silver;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Items.AddRange(new object[] {
-            "Alla kategorier",
-            "Kött",
-            "Fisk",
-            "Sallader",
-            "Soppor",
-            "Desserter/kakor"});
+            "Alla kategorier"});
             this.cboCategory.Location = new System.Drawing.Point(49, 110);
             this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCategory.Name = "cboCategory";
@@ -175,13 +172,25 @@
             // 
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.Color.Silver;
-            this.btnEdit.Location = new System.Drawing.Point(489, 853);
+            this.btnEdit.Location = new System.Drawing.Point(489, 844);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(162, 34);
+            this.btnEdit.Size = new System.Drawing.Size(162, 43);
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Redigera recept";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Brown;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Location = new System.Drawing.Point(666, 844);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(148, 43);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "Radera recept";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // SearchForm
             // 
@@ -189,11 +198,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1053, 917);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.btnAddNew);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAdminLogin);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.picRecipe);
             this.Controls.Add(this.txtDescription);
@@ -220,10 +230,11 @@
         private TextBox txtDescription;
         private PictureBox picRecipe;
         private Label lblHeader;
-        private Label label1;
+        private Label lblAdminLogin;
         private Button btnAddNew;
         private Label lblType;
         private ComboBox cboCategory;
         private Button btnEdit;
+        private Button btnDelete;
     }
 }

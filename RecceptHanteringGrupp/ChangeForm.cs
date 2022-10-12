@@ -16,6 +16,11 @@ namespace RecceptHanteringGrupp
             txtDescription.Text = originalRecipe.Description;
             picImage.BackgroundImage = originalRecipe.Picture;
             _recipeImage = originalRecipe.Picture;
+
+            foreach (string type in Recipe.recipeTypes)
+            {
+                cboCategory.Items.Add(type);
+            }
         }
         public ChangeForm()
         {

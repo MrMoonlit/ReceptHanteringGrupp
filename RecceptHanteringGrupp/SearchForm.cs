@@ -12,11 +12,15 @@ namespace RecceptHanteringGrupp
             CheckIfAdmin();
             Recipe.GetAllRecipes();
 
+            foreach (string type in Recipe.recipeTypes)
+            {
+                cboCategory.Items.Add(type);
+            }
+
             #region Skapar upp recept tillfälligt för att testa funktionalitet
 
-            //Recipe.recipeList.Add(new Recipe("Fläskfile", "Kött", "Såhär lagar du maten:\n\nBörja med att hacka löken... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
+            //Recipe.recipeList.Add(new Recipe("Oxfilé med kantarellsås", "Kött", "Såhär lagar du maten:\n\nBörja med att hacka löken... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
             //Recipe.recipeList.Add(new Recipe("Fiskbullar i vitvinssås", "Fisk", "Såhär lagar du maten:\n\nBörja med att rensa fisken... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
-            //Recipe.recipeList.Add(new Recipe("Kladdkaka", "Desserter/kakor", "Såhär gör du:\n\nBörja med att kladda med ingredienserna... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
             //Recipe.recipeList.Add(new Recipe("Pekingsoppa", "Soppor", "Såhär lagar du maten:\n\nBörja med koka upp vatten... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
             //Recipe.recipeList.Add(new Recipe("Cesarsallad", "Sallader", "Såhär lagar du maten:\n\nHacka sallad... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
 
@@ -27,6 +31,11 @@ namespace RecceptHanteringGrupp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            ShowSearchResult();
+        }
+
+        private void ShowSearchResult()
+        {
             lstSearchResult.Items.Clear();
             var recipeList = Recipe.Search(txtSearchCondition.Text, cboCategory.Text);
             foreach (var recipe in recipeList)
@@ -35,11 +44,19 @@ namespace RecceptHanteringGrupp
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lblAdminLogin_Click(object sender, EventArgs e)
         {
-            LoginForm login = new LoginForm();
-            login.StartPosition = FormStartPosition.CenterParent;
-            login.ShowDialog();
+            if (!LoginForm.loggedIn)
+            {
+                LoginForm login = new LoginForm();
+                login.StartPosition = FormStartPosition.CenterParent;
+                login.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Du är redan inloggad");
+            }
+
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)
@@ -52,12 +69,13 @@ namespace RecceptHanteringGrupp
         {
             if (LoginForm.loggedIn)
             {
+                btnDelete.Visible = true;
                 btnEdit.Visible = true;
                 btnAddNew.Visible = true;
             }
-
             else
             {
+                btnDelete.Visible = false;
                 btnEdit.Visible = false;
                 btnAddNew.Visible = false;
             }
@@ -72,20 +90,27 @@ namespace RecceptHanteringGrupp
         {
             //Skickar ut info om valt recept i relevant control
 
-            if (lstSearchResult.SelectedItem != null)
+            if (HasSelectedRecipe())
             {
-                Recipe result = Recipe.recipeList.Where(recipe => recipe.Name == lstSearchResult.SelectedItem.ToString()).SingleOrDefault();
+                try
+                {
+                    Recipe result = Recipe.GetSingle(lstSearchResult.SelectedItem.ToString());
 
-                lblHeader.Text = result.Name;
-                lblType.Text = result.Type;
-                txtDescription.Text = result.Description;
-                picRecipe.BackgroundImage = result.Picture;
+                    lblHeader.Text = result.Name;
+                    lblType.Text = result.Type;
+                    txtDescription.Text = result.Description;
+                    picRecipe.BackgroundImage = result.Picture;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (lstSearchResult.SelectedItem != null)
+            if (HasSelectedRecipe())
             {
                 Recipe selected = new Recipe();
                 selected = Recipe.GetSingle(lstSearchResult.SelectedItem.ToString());
@@ -95,9 +120,30 @@ namespace RecceptHanteringGrupp
             else
             {
                 MessageBox.Show("Du måste välja ett recept i listan att redigera.");
-
             }
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (HasSelectedRecipe())
+            {
+                Recipe selected = new Recipe();
+                selected = Recipe.GetSingle(lstSearchResult.SelectedItem.ToString());
+                Recipe.Remove(selected);
+                ShowSearchResult();
+            }
+            else
+            {
+                MessageBox.Show("Du måste välja ett recelt att radera.");
+            }
+        }
+
+        private bool HasSelectedRecipe()
+        {
+            if (lstSearchResult.SelectedItem == null)
+                return false;
+            else
+                return true;
+        }
     }
 }

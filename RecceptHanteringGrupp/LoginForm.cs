@@ -26,7 +26,6 @@ namespace RecceptHanteringGrupp
             {
                 //här händer det det som händer om användaren är godkänd
                 loggedIn = true;
-                MessageBox.Show("Du är inloggad");
                 this.Close();
             }
             else

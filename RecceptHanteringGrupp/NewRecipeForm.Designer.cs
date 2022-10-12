@@ -121,6 +121,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(479, 31);
             this.txtName.TabIndex = 13;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lblName
             // 
@@ -136,12 +137,6 @@
             this.cboCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.cboCategory.ForeColor = System.Drawing.Color.Silver;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Items.AddRange(new object[] {
-            "Kött",
-            "Fisk",
-            "Sallader",
-            "Soppor",
-            "Desserter/kakor"});
             this.cboCategory.Location = new System.Drawing.Point(124, 200);
             this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCategory.Name = "cboCategory";

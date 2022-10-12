@@ -4,12 +4,15 @@
     {
 
         public static List<Recipe> recipeList = new List<Recipe>();
-
+        public static List<string> recipeTypes = new List<string>()
+        {
+            "kött", "Fisk", "Sallader", "Soppor", "Desserter/kakor"
+        };
 
         public string Name { get; set; }
         public string Type { get; set; } //Kött, Fisk, Sallader, Soppor, Desserter/kakor
         public string Description { get; set; }
-        public Image Picture { get; set; } //Path till bilden. Läggs förslagsvis i Properties.Recources (När man skapar upp ett recept anger man alltså image som t.ex: Properties.Resources.flaskfilégryta_med_champinjoner
+        public Image Picture { get; set; }
 
 
         #region Constructors
@@ -27,7 +30,7 @@
         }
         #endregion
 
-
+        #region Methods
         public static List<Recipe> GetAllRecipes()
         {
             recipeList = FileHandler.ReadFromFile();
@@ -36,7 +39,15 @@
 
         public static Recipe GetSingle(string selectedRecipeName)
         {
-            Recipe result = recipeList.Where(recipe => recipe.Name == selectedRecipeName).SingleOrDefault();
+            Recipe result;
+            try
+            {
+                result = recipeList.Where(recipe => recipe.Name == selectedRecipeName).SingleOrDefault();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
             return result;
         }
 
@@ -53,14 +64,7 @@
 
         public static void SaveChanges(Recipe originalRecipe, Recipe updatedRecipe)
         {
-            //Remove(originalRecipe);
-            for (int i = 0; i < recipeList.Count; i++)
-            {
-                if (recipeList[i].Name == originalRecipe.Name)
-                {
-                    recipeList.RemoveAt(i);
-                }
-            }
+            Remove(originalRecipe);
             recipeList.Add(updatedRecipe);
             FileHandler.WriteToFile();
         }
@@ -74,11 +78,15 @@
 
         public static void Remove(Recipe recipeToRemove)
         {
-
-
-
+            for (int i = 0; i < recipeList.Count; i++)
+            {
+                if (recipeList[i].Name == recipeToRemove.Name)
+                {
+                    recipeList.RemoveAt(i);
+                }
+            }
+            FileHandler.WriteToFile();
         }
-
-
+        #endregion
     }
 }
