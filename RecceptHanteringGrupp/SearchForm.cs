@@ -8,6 +8,7 @@ namespace RecceptHanteringGrupp
         public SearchForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             CheckIfAdmin();
             Recipe.GetAllRecipes();
 
@@ -97,5 +98,6 @@ namespace RecceptHanteringGrupp
 
             }
         }
+
     }
 }

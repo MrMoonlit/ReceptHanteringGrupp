@@ -41,6 +41,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtUsername.Location = new System.Drawing.Point(76, 110);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsername.Name = "txtUsername";
@@ -59,6 +60,8 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Location = new System.Drawing.Point(197, 303);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
@@ -70,6 +73,8 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Location = new System.Drawing.Point(76, 303);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
@@ -91,6 +96,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtPassword.Location = new System.Drawing.Point(76, 192);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
@@ -110,6 +116,7 @@
             // lblLinkNewUser
             // 
             this.lblLinkNewUser.AutoSize = true;
+            this.lblLinkNewUser.LinkColor = System.Drawing.Color.MediumPurple;
             this.lblLinkNewUser.Location = new System.Drawing.Point(257, 257);
             this.lblLinkNewUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLinkNewUser.Name = "lblLinkNewUser";
@@ -133,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(407, 425);
             this.Controls.Add(this.lblLoginFailed);
             this.Controls.Add(this.lblLinkNewUser);
@@ -143,8 +151,11 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtUsername);
+            this.ForeColor = System.Drawing.Color.Silver;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginForm";
+            this.Opacity = 0.9D;
             this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();

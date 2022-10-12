@@ -43,6 +43,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Location = new System.Drawing.Point(663, 777);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
@@ -54,6 +55,7 @@
             // 
             // btnNewImage
             // 
+            this.btnNewImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewImage.Location = new System.Drawing.Point(734, 375);
             this.btnNewImage.Name = "btnNewImage";
             this.btnNewImage.Size = new System.Drawing.Size(127, 43);
@@ -74,6 +76,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(805, 772);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(144, 43);
@@ -93,6 +96,8 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.txtDescription.ForeColor = System.Drawing.Color.Silver;
             this.txtDescription.Location = new System.Drawing.Point(124, 292);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -110,6 +115,8 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.txtName.ForeColor = System.Drawing.Color.Silver;
             this.txtName.Location = new System.Drawing.Point(124, 120);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(479, 31);
@@ -126,6 +133,8 @@
             // 
             // cboCategory
             // 
+            this.cboCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.cboCategory.ForeColor = System.Drawing.Color.Silver;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Items.AddRange(new object[] {
             "Kött",
@@ -144,6 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1053, 917);
             this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.btnCancel);
@@ -155,6 +165,7 @@
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
+            this.ForeColor = System.Drawing.Color.Silver;
             this.Name = "NewRecipeForm";
             this.Text = "NewRecipeForm";
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
