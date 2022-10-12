@@ -1,21 +1,18 @@
-﻿using System.Xml.Serialization;
-namespace RecceptHanteringGrupp.Classes
+﻿namespace RecceptHanteringGrupp.Classes
 {
-    public class FileHandler
+    public static class FileHandler
     {
         //string _filepath = @".\loginCredentials.txt";
 
-
         //Skapar tillfällig filepath för att testa funktionalitet
-        string _filepath = @"C:\Users\Joael\Desktop\TestInlogg.txt";
+        private static string _loginFilepath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Login_Details.txt";
+        private static string _recipesFilePath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\RecipeDatabase.txt";
 
-        StreamReader reader = null;
-
-        public bool CheckLoginCredentials(string username, string password)
+        public static bool CheckLoginCredentials(string username, string password)
         {
             try
             {
-                using (StreamReader reader = new StreamReader(_filepath))
+                using (StreamReader reader = new StreamReader(_loginFilepath))
                 {
                     string row = "";
 
@@ -34,31 +31,68 @@ namespace RecceptHanteringGrupp.Classes
             catch (Exception ex)
             {
                 throw ex;
-            }
-            
-            
+            }            
             return false;
         }
 
 
-        public static void WriteToFile(Recipe recipe)
+        public static void WriteToFile()
         {
-            
-            //serializer = new XmlSerializer(typeof(Recipe));
-            XmlSerializer serializer = new XmlSerializer(typeof(Recipe));
-            string filePath = @"C:\temp\file.Xml";
-            StreamWriter writer = new StreamWriter(filePath);
-            serializer.Serialize(writer, recipe);
-            //FileStream filestream = new FileStream(@"C:\temp\file.Xml", FileMode.Create, FileAccess.Write);
-
-            
-            writer.Close();
-           
-
+            using (StreamWriter w = new StreamWriter(_recipesFilePath, false))
+            {
+                foreach (Recipe recipe in Recipe.recipeList)
+                {
+                    string imageConverted = ConvertImageToBase64(recipe.Picture);
+                    string concat = recipe.Name + "¤" + recipe.Type + "¤" + recipe.Description + "¤" + imageConverted + "§endObject§";
+                    w.WriteLine(concat);
+                }
+            }
+        }
 
 
+        public static List<Recipe> ReadFromFile()
+        {
+            List<Recipe> recipes = new List<Recipe>();
+            string recipeFile = File.ReadAllText(_recipesFilePath);
+
+            if (recipeFile != "")
+            {
+                //Splittar på och bort sista instancen av "§endObject§" som jag använt för att splitta upp objekten.
+                int index = recipeFile.LastIndexOf("§endObject§");
+                string cleaned = recipeFile.Substring(0, index).TrimEnd();
+
+                //Alla objekt hamnar nu på ett varsitt index i arrayen
+                string[] objectArray = cleaned.Split("§endObject§");
+
+                foreach (string line in objectArray)
+                {
+                    //Splittar upp properties till varsitt index i array
+                    string[] lineArray = line.Split("¤");
+
+                    Image recipeImage = ConvertBase64StringToImage(lineArray[3]);
+                    Recipe recipe = new Recipe(lineArray[0].TrimStart(), lineArray[1], lineArray[2], recipeImage);
+                    recipes.Add(recipe);
+                }
+            }
+            return recipes;
+        }
 
 
+        private static string ConvertImageToBase64(Image imageToConvert)
+        {
+            using (MemoryStream m = new MemoryStream())
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    imageToConvert.Save(ms, imageToConvert.RawFormat);
+                    return Convert.ToBase64String(ms.ToArray());
+                }
+            }
+        }
+        public static Image ConvertBase64StringToImage(string image64Bit)
+        {
+            byte[] imageBytes = Convert.FromBase64String(image64Bit);
+            return new Bitmap(new MemoryStream(imageBytes));
         }
     }
 }

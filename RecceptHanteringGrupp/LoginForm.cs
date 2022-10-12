@@ -5,7 +5,6 @@ namespace RecceptHanteringGrupp
 {
     public partial class LoginForm : Form
     {
-        FileHandler FileHandler = new FileHandler();
         public static bool loggedIn = false;
         
 
@@ -27,6 +26,7 @@ namespace RecceptHanteringGrupp
             {
                 //här händer det det som händer om användaren är godkänd
                 loggedIn = true;
+                MessageBox.Show("Du är inloggad");
                 this.Close();
             }
             else

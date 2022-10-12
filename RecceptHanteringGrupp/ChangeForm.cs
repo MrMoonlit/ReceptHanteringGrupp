@@ -1,25 +1,25 @@
 ﻿using RecceptHanteringGrupp.Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RecceptHanteringGrupp
 {
     public partial class ChangeForm : Form
     {
         SearchForm searchForm = new SearchForm();
-        Image recipeImage;
-        public ChangeForm()
+        private Image _recipeImage;
+        private Recipe _originalRecipe;
+        public ChangeForm(Recipe originalRecipe)
         {
             InitializeComponent();
-            
+            _originalRecipe = originalRecipe;
+            txtName.Text = originalRecipe.Name;
+            cboCategory.Text = originalRecipe.Type;
+            txtDescription.Text = originalRecipe.Description;
+            picImage.BackgroundImage = originalRecipe.Picture;
+            _recipeImage = originalRecipe.Picture;
+        }
+        public ChangeForm()
+        {
+
         }
 
         private void btnNewImage_Click(object sender, EventArgs e)
@@ -31,14 +31,15 @@ namespace RecceptHanteringGrupp
             {
                 picImage.BackgroundImage = new Bitmap(open.FileName);
 
-                recipeImage = new Bitmap(open.FileName);
+                _recipeImage = new Bitmap(open.FileName);
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string test = "";           
-            Recipe.SaveNew(txtName.Text, txtDescription.Text, txtType.Text, recipeImage);
+            Recipe updatedRecipe = new Recipe(txtName.Text, cboCategory.Text, txtDescription.Text, _recipeImage);
+
+            Recipe.SaveChanges(_originalRecipe, updatedRecipe);
             VisualControl.SwitchForm(searchForm, this);
         }
 

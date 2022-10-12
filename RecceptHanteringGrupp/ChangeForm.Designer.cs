@@ -32,77 +32,62 @@
             this.lblName = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.lblType = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.btnNewImage = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(11, 29);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Location = new System.Drawing.Point(16, 48);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(145, 23);
+            this.txtName.Size = new System.Drawing.Size(205, 31);
             this.txtName.TabIndex = 1;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(11, 12);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Location = new System.Drawing.Point(16, 20);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(46, 15);
+            this.lblName.Size = new System.Drawing.Size(70, 25);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Maträtt";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(11, 132);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescription.Location = new System.Drawing.Point(16, 220);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(252, 274);
+            this.txtDescription.Size = new System.Drawing.Size(358, 454);
             this.txtDescription.TabIndex = 3;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(11, 115);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDescription.Location = new System.Drawing.Point(16, 192);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(68, 15);
+            this.lblDescription.Size = new System.Drawing.Size(102, 25);
             this.lblDescription.TabIndex = 4;
             this.lblDescription.Text = "Beskrivning";
-            // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(11, 76);
-            this.txtType.Margin = new System.Windows.Forms.Padding(2);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(145, 23);
-            this.txtType.TabIndex = 2;
-            this.txtType.TextChanged += new System.EventHandler(this.txtType_TextChanged);
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(7, 59);
-            this.lblType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblType.Location = new System.Drawing.Point(10, 98);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(82, 15);
+            this.lblType.Size = new System.Drawing.Size(126, 25);
             this.lblType.TabIndex = 6;
             this.lblType.Text = "Typ av maträtt";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(380, 383);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Location = new System.Drawing.Point(543, 638);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(101, 26);
+            this.btnSave.Size = new System.Drawing.Size(144, 43);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Spara";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -112,19 +97,17 @@
             // 
             this.picImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picImage.Location = new System.Drawing.Point(270, 29);
-            this.picImage.Margin = new System.Windows.Forms.Padding(2);
+            this.picImage.Location = new System.Drawing.Point(386, 48);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(211, 150);
+            this.picImage.Size = new System.Drawing.Size(301, 249);
             this.picImage.TabIndex = 10;
             this.picImage.TabStop = false;
             // 
             // btnNewImage
             // 
-            this.btnNewImage.Location = new System.Drawing.Point(327, 183);
-            this.btnNewImage.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewImage.Location = new System.Drawing.Point(467, 305);
             this.btnNewImage.Name = "btnNewImage";
-            this.btnNewImage.Size = new System.Drawing.Size(89, 26);
+            this.btnNewImage.Size = new System.Drawing.Size(127, 43);
             this.btnNewImage.TabIndex = 11;
             this.btnNewImage.Text = "Ny bild";
             this.btnNewImage.UseVisualStyleBackColor = true;
@@ -132,30 +115,46 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(270, 383);
+            this.btnCancel.Location = new System.Drawing.Point(386, 638);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(107, 38);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Avbryt";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cboCategory
+            // 
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Items.AddRange(new object[] {
+            "Kött",
+            "Fisk",
+            "Sallader",
+            "Soppor",
+            "Desserter/kakor"});
+            this.cboCategory.Location = new System.Drawing.Point(16, 128);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(171, 33);
+            this.cboCategory.TabIndex = 24;
+            this.cboCategory.Text = "Välj kategori";
+            // 
             // ChangeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 438);
+            this.ClientSize = new System.Drawing.Size(703, 730);
+            this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnNewImage);
             this.Controls.Add(this.picImage);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtType);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChangeForm";
             this.Text = "ChangeForm";
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
@@ -169,11 +168,11 @@
         private Label lblName;
         private TextBox txtDescription;
         private Label lblDescription;
-        private TextBox txtType;
         private Label lblType;
         private Button btnSave;
         private PictureBox picImage;
         private Button btnNewImage;
         private Button btnCancel;
+        private ComboBox cboCategory;
     }
 }

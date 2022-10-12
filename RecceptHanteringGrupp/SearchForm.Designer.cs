@@ -38,21 +38,24 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.lblType = new System.Windows.Forms.Label();
             this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearchCondition
             // 
-            this.txtSearchCondition.Location = new System.Drawing.Point(34, 37);
+            this.txtSearchCondition.Location = new System.Drawing.Point(49, 62);
+            this.txtSearchCondition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearchCondition.Name = "txtSearchCondition";
-            this.txtSearchCondition.Size = new System.Drawing.Size(196, 23);
+            this.txtSearchCondition.Size = new System.Drawing.Size(278, 31);
             this.txtSearchCondition.TabIndex = 0;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(247, 37);
+            this.btnSearch.Location = new System.Drawing.Point(353, 62);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(107, 38);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Sök";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -61,29 +64,34 @@
             // lstSearchResult
             // 
             this.lstSearchResult.FormattingEnabled = true;
-            this.lstSearchResult.ItemHeight = 15;
-            this.lstSearchResult.Location = new System.Drawing.Point(34, 105);
+            this.lstSearchResult.ItemHeight = 25;
+            this.lstSearchResult.Location = new System.Drawing.Point(49, 175);
+            this.lstSearchResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstSearchResult.Name = "lstSearchResult";
-            this.lstSearchResult.Size = new System.Drawing.Size(288, 394);
+            this.lstSearchResult.Size = new System.Drawing.Size(410, 654);
             this.lstSearchResult.TabIndex = 2;
             this.lstSearchResult.SelectedValueChanged += new System.EventHandler(this.lstSearchResult_SelectedValueChanged);
             // 
             // txtDescription
             // 
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescription.Location = new System.Drawing.Point(348, 232);
+            this.txtDescription.Location = new System.Drawing.Point(489, 402);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(354, 269);
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescription.Size = new System.Drawing.Size(506, 420);
             this.txtDescription.TabIndex = 3;
             // 
             // picRecipe
             // 
             this.picRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRecipe.Location = new System.Drawing.Point(348, 96);
+            this.picRecipe.Location = new System.Drawing.Point(489, 175);
+            this.picRecipe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picRecipe.Name = "picRecipe";
-            this.picRecipe.Size = new System.Drawing.Size(195, 130);
+            this.picRecipe.Size = new System.Drawing.Size(279, 217);
+            this.picRecipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRecipe.TabIndex = 4;
             this.picRecipe.TabStop = false;
             // 
@@ -91,9 +99,10 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblHeader.Location = new System.Drawing.Point(342, 37);
+            this.lblHeader.Location = new System.Drawing.Point(489, 62);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(0, 32);
+            this.lblHeader.Size = new System.Drawing.Size(0, 48);
             this.lblHeader.TabIndex = 5;
             // 
             // label1
@@ -102,18 +111,20 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(620, 513);
+            this.label1.Location = new System.Drawing.Point(886, 855);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.Size = new System.Drawing.Size(124, 28);
             this.label1.TabIndex = 6;
             this.label1.Text = "Admin login";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(34, 513);
+            this.btnAddNew.Location = new System.Drawing.Point(49, 855);
+            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(120, 23);
+            this.btnAddNew.Size = new System.Drawing.Size(171, 38);
             this.btnAddNew.TabIndex = 7;
             this.btnAddNew.Text = "Lägg till nytt recept";
             this.btnAddNew.UseVisualStyleBackColor = true;
@@ -124,9 +135,10 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblType.Location = new System.Drawing.Point(348, 75);
+            this.lblType.Location = new System.Drawing.Point(497, 133);
+            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(0, 15);
+            this.lblType.Size = new System.Drawing.Size(0, 25);
             this.lblType.TabIndex = 8;
             // 
             // cboCategory
@@ -139,17 +151,29 @@
             "Sallader",
             "Soppor",
             "Desserter/kakor"});
-            this.cboCategory.Location = new System.Drawing.Point(34, 66);
+            this.cboCategory.Location = new System.Drawing.Point(49, 110);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(121, 23);
+            this.cboCategory.Size = new System.Drawing.Size(171, 33);
             this.cboCategory.TabIndex = 9;
             this.cboCategory.Text = "Alla kategorier";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(489, 853);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(162, 34);
+            this.btnEdit.TabIndex = 10;
+            this.btnEdit.Text = "Redigera recept";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 550);
+            this.ClientSize = new System.Drawing.Size(1053, 917);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.btnAddNew);
@@ -160,6 +184,7 @@
             this.Controls.Add(this.lstSearchResult);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchCondition);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SearchForm";
             this.Text = "Sök recept";
             this.Activated += new System.EventHandler(this.FormFocusActive);
@@ -181,5 +206,6 @@
         private Button btnAddNew;
         private Label lblType;
         private ComboBox cboCategory;
+        private Button btnEdit;
     }
 }

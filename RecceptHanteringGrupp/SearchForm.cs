@@ -1,5 +1,4 @@
 using RecceptHanteringGrupp.Classes;
-using System.Xml.Serialization;
 namespace RecceptHanteringGrupp
 {
     public partial class SearchForm : Form
@@ -10,12 +9,17 @@ namespace RecceptHanteringGrupp
         {
             InitializeComponent();
             CheckIfAdmin();
+            Recipe.GetAllRecipes();
 
             #region Skapar upp recept tillfälligt för att testa funktionalitet
-            Recipe recipe1 = new Recipe("Fläskfile", "Laga maten så blir det gott att äta sen", "Kött", Properties.Resources.flaskfilégryta_med_champinjoner);
-            Recipe recipe2 = new Recipe("Fiskbullar i vitvinssås", "Laga maten och är den", "Fisk", Properties.Resources.flaskfilégryta_med_champinjoner);
-            Recipe.recipeList.Add(recipe1);
-            Recipe.recipeList.Add(recipe2);
+
+            //Recipe.recipeList.Add(new Recipe("Fläskfile", "Kött", "Såhär lagar du maten:\n\nBörja med att hacka löken... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
+            //Recipe.recipeList.Add(new Recipe("Fiskbullar i vitvinssås", "Fisk", "Såhär lagar du maten:\n\nBörja med att rensa fisken... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
+            //Recipe.recipeList.Add(new Recipe("Kladdkaka", "Desserter/kakor", "Såhär gör du:\n\nBörja med att kladda med ingredienserna... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
+            //Recipe.recipeList.Add(new Recipe("Pekingsoppa", "Soppor", "Såhär lagar du maten:\n\nBörja med koka upp vatten... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
+            //Recipe.recipeList.Add(new Recipe("Cesarsallad", "Sallader", "Såhär lagar du maten:\n\nHacka sallad... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
+
+            //FileHandler.WriteToFile();
             #endregion
 
         }
@@ -28,7 +32,6 @@ namespace RecceptHanteringGrupp
             {
                 lstSearchResult.Items.Add(recipe.Name);
             }
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,7 +43,8 @@ namespace RecceptHanteringGrupp
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            VisualControl.SwitchForm(changeForm, this);
+            NewRecipeForm newRecipe = new NewRecipeForm();
+            VisualControl.SwitchForm(newRecipe, this);
         }
 
         private void CheckIfAdmin()
@@ -64,14 +68,30 @@ namespace RecceptHanteringGrupp
             {
                 Recipe result = Recipe.recipeList.Where(recipe => recipe.Name == lstSearchResult.SelectedItem.ToString()).SingleOrDefault();
 
-
                 lblHeader.Text = result.Name;
                 lblType.Text = result.Type;
                 txtDescription.Text = result.Description;
                 picRecipe.BackgroundImage = result.Picture;
             }
+        }
 
-
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Recipe selected = new Recipe();
+                selected = Recipe.GetSingle(lstSearchResult.SelectedItem.ToString());
+                ChangeForm changeForm = new ChangeForm(selected);
+                VisualControl.SwitchForm(changeForm, this);
+            }
+            catch (NullReferenceException nullRefex)
+            {
+                MessageBox.Show("Du måste välja ett recept i listan att redigera.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Något gick fel, försök igen.");
+            }
         }
     }
 }
