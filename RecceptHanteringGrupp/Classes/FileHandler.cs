@@ -4,9 +4,7 @@
     {
         //string _filepath = @".\loginCredentials.txt";
 
-        //Skapar tillfällig filepath för att testa funktionalitet
-        //private static string _loginFilepath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Login_Details.txt";
-        //private static string _recipesFilePath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Recipe_Database.txt";
+        //Lägg till filerna i den färdigdebuggade mappen mitt i smeten med .EXE filen filen så funkar det om det inte redan gör det
         private static string _loginFilepath = Directory.GetCurrentDirectory() + @"\Login_Details.txt";
         private static string _recipesFilePath = Directory.GetCurrentDirectory() + @"\Recipe_Database.txt";
 
@@ -38,6 +36,34 @@
             return false;
         }
 
+
+        //en overload som Bara kollar username, för användning vid skapandet av nya användare
+        public static bool CheckLoginCredentials(string username)
+        {
+            try
+            {
+                using (StreamReader reader = new StreamReader(_loginFilepath))
+                {
+                    string row = "";
+
+                    if ((row = reader.ReadLine()) != null)
+                    {
+                        var values = row.Split(',');
+                        if (values[0] == username)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            //felhantering här, för om det inte filepath existerar genereras ett exception. Kastar tillbaka till login-knappen.
+            //tänker att vi gör en metod i Filehandler klassen för detta. 
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return false;
+        }
 
         public static void WriteToFile()
         {
