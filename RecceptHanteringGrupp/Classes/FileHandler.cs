@@ -5,9 +5,10 @@
         //string _filepath = @".\loginCredentials.txt";
 
         //Skapar tillfällig filepath för att testa funktionalitet
-        private static string _loginFilepath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Login_Details.txt";
-        private static string _recipesFilePath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Recipe_Database.txt";
-
+        //private static string _loginFilepath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Login_Details.txt";
+        //private static string _recipesFilePath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Recipe_Database.txt";
+        private static string _loginFilepath = Directory.GetCurrentDirectory() + @"\Login_Details.txt";
+        private static string _recipesFilePath = Directory.GetCurrentDirectory() + @"\Recipe_Database.txt";
 
         #region Metoder
         public static bool CheckLoginCredentials(string username, string password)
