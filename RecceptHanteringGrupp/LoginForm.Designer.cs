@@ -41,25 +41,28 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(53, 108);
+            this.txtUsername.Location = new System.Drawing.Point(76, 110);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(160, 23);
+            this.txtUsername.Size = new System.Drawing.Size(227, 31);
             this.txtUsername.TabIndex = 0;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(53, 90);
+            this.lblUsername.Location = new System.Drawing.Point(76, 80);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(89, 15);
+            this.lblUsername.Size = new System.Drawing.Size(133, 25);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Användarnamn";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(138, 224);
+            this.btnCancel.Location = new System.Drawing.Point(197, 303);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(107, 38);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Avbryt";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(53, 224);
+            this.btnLogin.Location = new System.Drawing.Point(76, 303);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(107, 38);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Logga in";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -78,34 +82,38 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(53, 139);
+            this.lblPassword.Location = new System.Drawing.Point(76, 162);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(56, 15);
+            this.lblPassword.Size = new System.Drawing.Size(86, 25);
             this.lblPassword.TabIndex = 7;
             this.lblPassword.Text = "Lösenord";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(53, 157);
+            this.txtPassword.Location = new System.Drawing.Point(76, 192);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(160, 23);
+            this.txtPassword.Size = new System.Drawing.Size(227, 31);
             this.txtPassword.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 196);
+            this.label3.Location = new System.Drawing.Point(94, 257);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 15);
+            this.label3.Size = new System.Drawing.Size(178, 25);
             this.label3.TabIndex = 8;
             this.label3.Text = "Ny användare? Klicka";
             // 
             // lblLinkNewUser
             // 
             this.lblLinkNewUser.AutoSize = true;
-            this.lblLinkNewUser.Location = new System.Drawing.Point(180, 196);
+            this.lblLinkNewUser.Location = new System.Drawing.Point(257, 257);
+            this.lblLinkNewUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLinkNewUser.Name = "lblLinkNewUser";
-            this.lblLinkNewUser.Size = new System.Drawing.Size(24, 15);
+            this.lblLinkNewUser.Size = new System.Drawing.Size(37, 25);
             this.lblLinkNewUser.TabIndex = 9;
             this.lblLinkNewUser.TabStop = true;
             this.lblLinkNewUser.Text = "här";
@@ -114,17 +122,18 @@
             // 
             this.lblLoginFailed.AutoSize = true;
             this.lblLoginFailed.ForeColor = System.Drawing.Color.Red;
-            this.lblLoginFailed.Location = new System.Drawing.Point(53, 183);
+            this.lblLoginFailed.Location = new System.Drawing.Point(76, 235);
+            this.lblLoginFailed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginFailed.Name = "lblLoginFailed";
-            this.lblLoginFailed.Size = new System.Drawing.Size(38, 15);
+            this.lblLoginFailed.Size = new System.Drawing.Size(59, 25);
             this.lblLoginFailed.TabIndex = 10;
             this.lblLoginFailed.Text = "label1";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 327);
+            this.ClientSize = new System.Drawing.Size(407, 425);
             this.Controls.Add(this.lblLoginFailed);
             this.Controls.Add(this.lblLinkNewUser);
             this.Controls.Add(this.label3);
@@ -134,6 +143,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtUsername);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.ResumeLayout(false);

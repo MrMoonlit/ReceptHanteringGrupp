@@ -43,17 +43,18 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(382, 635);
+            this.btnCancel.Location = new System.Drawing.Point(663, 777);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 38);
             this.btnCancel.TabIndex = 22;
             this.btnCancel.Text = "Avbryt";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnNewImage
             // 
-            this.btnNewImage.Location = new System.Drawing.Point(463, 302);
+            this.btnNewImage.Location = new System.Drawing.Point(734, 375);
             this.btnNewImage.Name = "btnNewImage";
             this.btnNewImage.Size = new System.Drawing.Size(127, 43);
             this.btnNewImage.TabIndex = 21;
@@ -65,7 +66,7 @@
             // 
             this.picImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picImage.Location = new System.Drawing.Point(382, 45);
+            this.picImage.Location = new System.Drawing.Point(648, 120);
             this.picImage.Name = "picImage";
             this.picImage.Size = new System.Drawing.Size(301, 249);
             this.picImage.TabIndex = 20;
@@ -73,7 +74,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(539, 635);
+            this.btnSave.Location = new System.Drawing.Point(805, 772);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(144, 43);
             this.btnSave.TabIndex = 19;
@@ -84,7 +85,7 @@
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(6, 95);
+            this.lblType.Location = new System.Drawing.Point(118, 170);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(126, 25);
             this.lblType.TabIndex = 18;
@@ -92,16 +93,16 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(12, 217);
+            this.txtDescription.Location = new System.Drawing.Point(124, 292);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(358, 454);
+            this.txtDescription.Size = new System.Drawing.Size(479, 523);
             this.txtDescription.TabIndex = 16;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(12, 189);
+            this.lblDescription.Location = new System.Drawing.Point(124, 264);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(102, 25);
             this.lblDescription.TabIndex = 17;
@@ -109,15 +110,15 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(12, 45);
+            this.txtName.Location = new System.Drawing.Point(124, 120);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(205, 31);
+            this.txtName.Size = new System.Drawing.Size(479, 31);
             this.txtName.TabIndex = 13;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 17);
+            this.lblName.Location = new System.Drawing.Point(124, 92);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(70, 25);
             this.lblName.TabIndex = 15;
@@ -132,7 +133,7 @@
             "Sallader",
             "Soppor",
             "Desserter/kakor"});
-            this.cboCategory.Location = new System.Drawing.Point(12, 125);
+            this.cboCategory.Location = new System.Drawing.Point(124, 200);
             this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(171, 33);
@@ -143,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 730);
+            this.ClientSize = new System.Drawing.Size(1053, 917);
             this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnNewImage);

@@ -50,9 +50,16 @@ namespace RecceptHanteringGrupp
         private void CheckIfAdmin()
         {
             if (LoginForm.loggedIn)
+            {
+                btnEdit.Visible = true;
                 btnAddNew.Visible = true;
+            }
+
             else
+            {
+                btnEdit.Visible = false;
                 btnAddNew.Visible = false;
+            }
         }
 
         private void FormFocusActive(object sender, EventArgs e)
@@ -77,20 +84,17 @@ namespace RecceptHanteringGrupp
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
+            if (lstSearchResult.SelectedItem != null)
             {
                 Recipe selected = new Recipe();
                 selected = Recipe.GetSingle(lstSearchResult.SelectedItem.ToString());
                 ChangeForm changeForm = new ChangeForm(selected);
                 VisualControl.SwitchForm(changeForm, this);
             }
-            catch (NullReferenceException nullRefex)
+            else
             {
                 MessageBox.Show("Du måste välja ett recept i listan att redigera.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Något gick fel, försök igen.");
+
             }
         }
     }

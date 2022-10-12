@@ -4,6 +4,7 @@ namespace RecceptHanteringGrupp
 {
     public partial class NewRecipeForm : Form
     {
+        SearchForm searchForm = new SearchForm();
         private Image _recipeImage;
         public NewRecipeForm()
         {
@@ -14,11 +15,9 @@ namespace RecceptHanteringGrupp
         {
             try
             {
-                SearchForm searchForm = new SearchForm();
                 Recipe.SaveNew(txtName.Text, cboCategory.Text, txtDescription.Text, _recipeImage);
                 MessageBox.Show("Recept sparat!");
                 VisualControl.SwitchForm(searchForm, this);
-
             }
             catch (Exception ex)
             {
@@ -37,6 +36,11 @@ namespace RecceptHanteringGrupp
 
                 _recipeImage = new Bitmap(open.FileName);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            VisualControl.SwitchForm(searchForm, this);
         }
     }
 }

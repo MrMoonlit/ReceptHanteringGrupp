@@ -6,7 +6,7 @@
 
         //Skapar tillfällig filepath för att testa funktionalitet
         private static string _loginFilepath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Login_Details.txt";
-        private static string _recipesFilePath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\RecipeDatabase.txt";
+        private static string _recipesFilePath = @"C:\Users\Joael\source\repos\MrMoonlit\RecceptHanteringGrupp\RecceptHanteringGrupp\Resources\Recipe_Database.txt";
 
         public static bool CheckLoginCredentials(string username, string password)
         {
@@ -38,14 +38,21 @@
 
         public static void WriteToFile()
         {
-            using (StreamWriter w = new StreamWriter(_recipesFilePath, false))
+            try
             {
-                foreach (Recipe recipe in Recipe.recipeList)
+                using (StreamWriter w = new StreamWriter(_recipesFilePath, false))
                 {
-                    string imageConverted = ConvertImageToBase64(recipe.Picture);
-                    string concat = recipe.Name + "¤" + recipe.Type + "¤" + recipe.Description + "¤" + imageConverted + "§endObject§";
-                    w.WriteLine(concat);
+                    foreach (Recipe recipe in Recipe.recipeList)
+                    {
+                        string imageConverted = ConvertImageToBase64(recipe.Picture);
+                        string concat = recipe.Name + "¤" + recipe.Type + "¤" + recipe.Description + "¤" + imageConverted + "§endObject§";
+                        w.WriteLine(concat);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
