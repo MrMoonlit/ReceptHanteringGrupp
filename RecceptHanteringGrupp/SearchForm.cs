@@ -11,6 +11,7 @@ namespace RecceptHanteringGrupp
             this.StartPosition = FormStartPosition.CenterScreen;
             CheckIfAdmin();
             Recipe.GetAllRecipes();
+            FileHandler.SetUpResourceFiles();
 
             foreach (string type in Recipe.recipeTypes)
             {

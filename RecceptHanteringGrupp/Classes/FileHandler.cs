@@ -7,6 +7,7 @@
         //Lägg till filerna i den färdigdebuggade mappen mitt i smeten med .EXE filen filen så funkar det om det inte redan gör det
         private static string _loginFilepath = Directory.GetCurrentDirectory() + @"\Login_Details.txt";
         private static string _recipesFilePath = Directory.GetCurrentDirectory() + @"\Recipe_Database.txt";
+        private static string _exceptionFilepath = Directory.GetCurrentDirectory() + @"\ExceptionCollection.txt";
 
         #region Metoder
         public static bool CheckLoginCredentials(string username, string password)
@@ -112,7 +113,34 @@
             return recipes;
         }
 
+        public static void SetUpResourceFiles()
+        {
+            if (!File.Exists(_recipesFilePath))
+                File.Create(_recipesFilePath);
 
+            if (!File.Exists(_loginFilepath))
+                File.Create(_loginFilepath);
+
+            if (!File.Exists(_exceptionFilepath))
+                File.Create(_exceptionFilepath);
+        }
+
+        public static void LoggingError(Exception ex)
+        {
+            try
+            {
+                using (StreamWriter Writer = new StreamWriter(_exceptionFilepath, true))
+                {
+                    Writer.WriteLine("----------------------");
+                    Writer.WriteLine(DateTime.Now+ "\n");
+                    Writer.WriteLine(ex.ToString());
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         #region Bildkonvertering för att kunna lagra i textfil
         private static string ConvertImageToBase64(Image imageToConvert)

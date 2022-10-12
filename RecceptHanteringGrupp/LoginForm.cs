@@ -34,6 +34,9 @@ namespace RecceptHanteringGrupp
             }
         }
 
-        
+        private void lblLinkNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
