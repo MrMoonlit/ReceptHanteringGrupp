@@ -6,7 +6,7 @@
         public static List<Recipe> recipeList = new List<Recipe>();
         public static List<string> recipeTypes = new List<string>()
         {
-            "kött", "Fisk", "Sallader", "Soppor", "Desserter/kakor"
+            "Kött", "Fisk", "Sallader", "Soppor", "Desserter/kakor"
         };
 
         public string Name { get; set; }
