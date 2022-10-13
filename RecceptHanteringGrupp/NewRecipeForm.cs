@@ -19,31 +19,18 @@ namespace RecceptHanteringGrupp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-           if( Recipe.SameRecipeName(txtName.Text))
-           {
-                
-
-           }
+            if (Recipe.SameRecipeName(txtName.Text)) { }
             else
             {
-
                 if (!UserInputHandler.MissingInput(this))
                 {
                     Recipe.SaveNew(txtName.Text, cboCategory.Text, txtDescription.Text, _recipeImage);
-
                     MessageBox.Show("Recept sparat!");
                     VisualControl.SwitchForm(searchForm, this);
                 }
-
-
-                else
-                {
+                else 
                     MessageBox.Show("Något fält saknar inmatning.");
-
-
-                }
             }
-
         }
 
         private void btnNewImage_Click(object sender, EventArgs e)
@@ -54,7 +41,6 @@ namespace RecceptHanteringGrupp
             if (open.ShowDialog() == DialogResult.OK)
             {
                 picImage.BackgroundImage = new Bitmap(open.FileName);
-
                 _recipeImage = new Bitmap(open.FileName);
             }
         }
@@ -67,11 +53,7 @@ namespace RecceptHanteringGrupp
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             if (Recipe.SameRecipeName(txtName.Text))
-            {
                 lblWarning.Visible = true;
-
-            }
         }
-
     }
 }

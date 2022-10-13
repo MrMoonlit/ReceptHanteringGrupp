@@ -64,16 +64,32 @@
 
         public static void SaveChanges(Recipe originalRecipe, Recipe updatedRecipe)
         {
-            Remove(originalRecipe);
-            recipeList.Add(updatedRecipe);
-            FileHandler.WriteToFile();
+            try
+            {
+                Remove(originalRecipe);
+                recipeList.Add(updatedRecipe);
+                FileHandler.WriteToFile();
+            }
+            catch (Exception ex)
+            {
+                FileHandler.LoggingError(ex);
+                throw;
+            }
         }
 
         public static void SaveNew(string name, string description, string type, Image picture)
         {
-            Recipe recipe = new Recipe(name, description, type, picture);
-            recipeList.Add(recipe);
-            FileHandler.WriteToFile();
+            try
+            {
+                Recipe recipe = new Recipe(name, description, type, picture);
+                recipeList.Add(recipe);
+                FileHandler.WriteToFile();
+            }
+            catch (Exception ex)
+            {
+                FileHandler.LoggingError(ex);
+            }
+            
         }
 
         public static void Remove(Recipe recipeToRemove)
@@ -81,9 +97,7 @@
             for (int i = 0; i < recipeList.Count; i++)
             {
                 if (recipeList[i].Name == recipeToRemove.Name)
-                {
                     recipeList.RemoveAt(i);
-                }
             }
             FileHandler.WriteToFile();
         }
@@ -92,18 +106,9 @@
             foreach (Recipe recipe in recipeList)
             {
                 if(recipe.Name == input)
-                {
                     return true;
-
-
-                }
-                
-
-
             }
             return false;
-
-
         }
         #endregion
     }

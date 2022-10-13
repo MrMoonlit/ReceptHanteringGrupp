@@ -33,10 +33,5 @@ namespace RecceptHanteringGrupp
                 lblLoginFailed.Text = "Användarnamn eller lösenord är felaktigt";
             }
         }
-
-        private void lblLinkNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
     }
 }
