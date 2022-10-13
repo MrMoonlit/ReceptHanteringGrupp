@@ -42,6 +42,7 @@ namespace RecceptHanteringGrupp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             Recipe updatedRecipe = new Recipe(txtName.Text, cboCategory.Text, txtDescription.Text, _recipeImage);
 
             Recipe.SaveChanges(_originalRecipe, updatedRecipe);

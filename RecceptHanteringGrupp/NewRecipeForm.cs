@@ -50,7 +50,7 @@ namespace RecceptHanteringGrupp
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-
+            //Här läggs check för om 
         }
     }
 }

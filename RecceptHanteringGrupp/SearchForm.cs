@@ -18,16 +18,6 @@ namespace RecceptHanteringGrupp
                 cboCategory.Items.Add(type);
             }
 
-            #region Skapar upp recept tillfälligt för att testa funktionalitet
-
-            //Recipe.recipeList.Add(new Recipe("Oxfilé med kantarellsås", "Kött", "Såhär lagar du maten:\n\nBörja med att hacka löken... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
-            //Recipe.recipeList.Add(new Recipe("Fiskbullar i vitvinssås", "Fisk", "Såhär lagar du maten:\n\nBörja med att rensa fisken... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
-            //Recipe.recipeList.Add(new Recipe("Pekingsoppa", "Soppor", "Såhär lagar du maten:\n\nBörja med koka upp vatten... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
-            //Recipe.recipeList.Add(new Recipe("Cesarsallad", "Sallader", "Såhär lagar du maten:\n\nHacka sallad... o.s.v..", Properties.Resources.flaskfilégryta_med_champinjoner));
-
-            //FileHandler.WriteToFile();
-            #endregion
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
