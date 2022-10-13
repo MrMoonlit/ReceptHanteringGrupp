@@ -14,13 +14,14 @@ namespace RecceptHanteringGrupp
             {
                 cboCategory.Items.Add(type);
             }
+     
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
            if( Recipe.SameRecipeName(txtName.Text))
            {
-                lblWarning.Visible = true;
+                
 
            }
             else
@@ -65,7 +66,11 @@ namespace RecceptHanteringGrupp
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
+            if (Recipe.SameRecipeName(txtName.Text))
+            {
+                lblWarning.Visible = true;
 
+            }
         }
 
     }
