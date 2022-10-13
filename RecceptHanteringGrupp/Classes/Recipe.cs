@@ -87,6 +87,25 @@
             }
             FileHandler.WriteToFile();
         }
+        public static bool SameRecipeName(string input)
+        {
+            foreach (Recipe recipe in recipeList)
+            {
+                if(recipe.Name == input)
+                {
+                    return true;
+
+
+                }
+                
+
+
+            }
+            return false;
+
+
+        }
         #endregion
     }
+    
 }
