@@ -47,10 +47,10 @@
             // 
             this.txtSearchCondition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtSearchCondition.ForeColor = System.Drawing.Color.Silver;
-            this.txtSearchCondition.Location = new System.Drawing.Point(49, 62);
-            this.txtSearchCondition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearchCondition.Location = new System.Drawing.Point(39, 50);
+            this.txtSearchCondition.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchCondition.Name = "txtSearchCondition";
-            this.txtSearchCondition.Size = new System.Drawing.Size(278, 31);
+            this.txtSearchCondition.Size = new System.Drawing.Size(223, 27);
             this.txtSearchCondition.TabIndex = 0;
             // 
             // btnSearch
@@ -58,10 +58,10 @@
             this.btnSearch.BackColor = System.Drawing.Color.Black;
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(353, 62);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearch.Location = new System.Drawing.Point(282, 50);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(107, 38);
+            this.btnSearch.Size = new System.Drawing.Size(86, 30);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Sök";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -74,11 +74,11 @@
             this.lstSearchResult.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lstSearchResult.ForeColor = System.Drawing.Color.Silver;
             this.lstSearchResult.FormattingEnabled = true;
-            this.lstSearchResult.ItemHeight = 28;
-            this.lstSearchResult.Location = new System.Drawing.Point(49, 175);
-            this.lstSearchResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lstSearchResult.ItemHeight = 23;
+            this.lstSearchResult.Location = new System.Drawing.Point(39, 140);
+            this.lstSearchResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstSearchResult.Name = "lstSearchResult";
-            this.lstSearchResult.Size = new System.Drawing.Size(410, 644);
+            this.lstSearchResult.Size = new System.Drawing.Size(328, 506);
             this.lstSearchResult.TabIndex = 2;
             this.lstSearchResult.SelectedValueChanged += new System.EventHandler(this.lstSearchResult_SelectedValueChanged);
             // 
@@ -87,21 +87,22 @@
             this.txtDescription.BackColor = System.Drawing.Color.Black;
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescription.ForeColor = System.Drawing.Color.Silver;
-            this.txtDescription.Location = new System.Drawing.Point(489, 499);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDescription.Location = new System.Drawing.Point(391, 399);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(506, 323);
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescription.Size = new System.Drawing.Size(405, 258);
             this.txtDescription.TabIndex = 3;
             // 
             // picRecipe
             // 
             this.picRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRecipe.Location = new System.Drawing.Point(489, 175);
-            this.picRecipe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picRecipe.Location = new System.Drawing.Point(391, 140);
+            this.picRecipe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picRecipe.Name = "picRecipe";
-            this.picRecipe.Size = new System.Drawing.Size(375, 293);
+            this.picRecipe.Size = new System.Drawing.Size(300, 234);
             this.picRecipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRecipe.TabIndex = 4;
             this.picRecipe.TabStop = false;
@@ -110,10 +111,9 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblHeader.Location = new System.Drawing.Point(479, 94);
-            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeader.Location = new System.Drawing.Point(383, 75);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(0, 48);
+            this.lblHeader.Size = new System.Drawing.Size(0, 41);
             this.lblHeader.TabIndex = 5;
             // 
             // lblAdminLogin
@@ -122,10 +122,9 @@
             this.lblAdminLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAdminLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lblAdminLogin.ForeColor = System.Drawing.Color.MediumPurple;
-            this.lblAdminLogin.Location = new System.Drawing.Point(886, 855);
-            this.lblAdminLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdminLogin.Location = new System.Drawing.Point(709, 684);
             this.lblAdminLogin.Name = "lblAdminLogin";
-            this.lblAdminLogin.Size = new System.Drawing.Size(124, 28);
+            this.lblAdminLogin.Size = new System.Drawing.Size(103, 23);
             this.lblAdminLogin.TabIndex = 6;
             this.lblAdminLogin.Text = "Admin login";
             this.lblAdminLogin.Click += new System.EventHandler(this.lblAdminLogin_Click);
@@ -134,10 +133,10 @@
             // 
             this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNew.ForeColor = System.Drawing.Color.Silver;
-            this.btnAddNew.Location = new System.Drawing.Point(49, 855);
-            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddNew.Location = new System.Drawing.Point(39, 684);
+            this.btnAddNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(171, 38);
+            this.btnAddNew.Size = new System.Drawing.Size(137, 30);
             this.btnAddNew.TabIndex = 7;
             this.btnAddNew.Text = "Lägg till nytt recept";
             this.btnAddNew.UseVisualStyleBackColor = true;
@@ -148,10 +147,9 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblType.Location = new System.Drawing.Point(489, 62);
-            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblType.Location = new System.Drawing.Point(391, 50);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(0, 25);
+            this.lblType.Size = new System.Drawing.Size(0, 20);
             this.lblType.TabIndex = 8;
             // 
             // cboCategory
@@ -161,10 +159,10 @@
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Items.AddRange(new object[] {
             "Alla kategorier"});
-            this.cboCategory.Location = new System.Drawing.Point(49, 110);
-            this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboCategory.Location = new System.Drawing.Point(39, 88);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(171, 33);
+            this.cboCategory.Size = new System.Drawing.Size(138, 28);
             this.cboCategory.TabIndex = 9;
             this.cboCategory.Text = "Alla kategorier";
             // 
@@ -172,9 +170,10 @@
             // 
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.Color.Silver;
-            this.btnEdit.Location = new System.Drawing.Point(489, 844);
+            this.btnEdit.Location = new System.Drawing.Point(391, 675);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(162, 43);
+            this.btnEdit.Size = new System.Drawing.Size(130, 34);
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Redigera recept";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -184,9 +183,10 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Brown;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(666, 844);
+            this.btnDelete.Location = new System.Drawing.Point(533, 675);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(148, 43);
+            this.btnDelete.Size = new System.Drawing.Size(118, 34);
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Radera recept";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -194,10 +194,10 @@
             // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1053, 917);
+            this.ClientSize = new System.Drawing.Size(842, 734);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.cboCategory);
@@ -212,7 +212,7 @@
             this.Controls.Add(this.txtSearchCondition);
             this.ForeColor = System.Drawing.Color.Silver;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SearchForm";
             this.Text = "Sök recept";
             this.Activated += new System.EventHandler(this.FormFocusActive);

@@ -115,14 +115,21 @@
 
         public static void SetUpResourceFiles()
         {
-            if (!File.Exists(_recipesFilePath))
-                File.Create(_recipesFilePath);
+            try
+            {
+                if (!File.Exists(_recipesFilePath))
+                    File.Create(_recipesFilePath);
 
-            if (!File.Exists(_loginFilepath))
-                File.Create(_loginFilepath);
+                if (!File.Exists(_loginFilepath))
+                    File.Create(_loginFilepath);
 
-            if (!File.Exists(_exceptionFilepath))
-                File.Create(_exceptionFilepath);
+                if (!File.Exists(_exceptionFilepath))
+                    File.Create(_exceptionFilepath);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public static void LoggingError(Exception ex)
