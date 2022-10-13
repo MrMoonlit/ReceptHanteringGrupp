@@ -10,8 +10,15 @@ namespace RecceptHanteringGrupp
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             CheckIfAdmin();
-            Recipe.GetAllRecipes();
-            FileHandler.SetUpResourceFiles();
+            try
+            {
+                FileHandler.SetUpResourceFiles();
+                Recipe.GetAllRecipes();
+            }
+            catch (Exception ex)
+            {
+                FileHandler.LoggingError(ex);
+            }
 
             foreach (string type in Recipe.recipeTypes)
             {
