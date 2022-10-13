@@ -14,20 +14,36 @@ namespace RecceptHanteringGrupp
             {
                 cboCategory.Items.Add(type);
             }
+     
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!UserInputHandler.MissingInput(this))
-            {
-                Recipe.SaveNew(txtName.Text, cboCategory.Text, txtDescription.Text, _recipeImage);
-                MessageBox.Show("Recept sparat!");
-                VisualControl.SwitchForm(searchForm, this);
-            }
+           if( Recipe.SameRecipeName(txtName.Text))
+           {
+                
+
+           }
             else
             {
-                MessageBox.Show("Något fält saknar inmatning.");
+
+                if (!UserInputHandler.MissingInput(this))
+                {
+                    Recipe.SaveNew(txtName.Text, cboCategory.Text, txtDescription.Text, _recipeImage);
+
+                    MessageBox.Show("Recept sparat!");
+                    VisualControl.SwitchForm(searchForm, this);
+                }
+
+
+                else
+                {
+                    MessageBox.Show("Något fält saknar inmatning.");
+
+
+                }
             }
+
         }
 
         private void btnNewImage_Click(object sender, EventArgs e)
@@ -50,7 +66,12 @@ namespace RecceptHanteringGrupp
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            //Här läggs check för om 
+            if (Recipe.SameRecipeName(txtName.Text))
+            {
+                lblWarning.Visible = true;
+
+            }
         }
+
     }
 }
